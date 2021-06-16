@@ -16,6 +16,7 @@
 
 package com.soomla;
 
+import android.app.Activity;
 import android.app.Application;
 import android.content.Context;
 import android.os.Build;
@@ -27,7 +28,7 @@ public class SoomlaApp extends Application{
 	protected static SoomlaApp mInstance = null;
 	protected static Application mAppInstance = null;
 
-	@Deprecated
+  @Deprecated
 	public static SoomlaApp instance() {
     	return mInstance;
     }
@@ -94,10 +95,17 @@ public class SoomlaApp extends Application{
         return context;
     }
 
+    public static Activity getActivity() {
+      return activity;
+    }
 
-    /** Private Members */
+  /** Private Members */
 
     private static Context context;
+    private static Activity activity;
 
 
+  public void setActivity(Activity activity) {
+    this.activity = activity;
+  }
 }

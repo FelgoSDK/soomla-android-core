@@ -10,6 +10,7 @@ public class Soomla {
 	public static void initialize(Activity mainActivity, String secret) {
 		initialize(secret);
 		SoomlaApp soomlaApp = new SoomlaApp();
+		soomlaApp.setActivity(mainActivity);
 		soomlaApp.setApplication(mainActivity.getApplication());
 		soomlaApp.onCreate();
 	}
